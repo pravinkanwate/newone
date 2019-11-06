@@ -18,15 +18,10 @@ pipeline {
 
         stage('Build Docker Image') {
            steps {
-                sh 'docker build -t test1 .'
+                sh 'docker build -t testme .'
            }
          }
 
-        stage('Deploy to Production') {
-           steps {
-                sh 'date'
-            }
-        }
 
     }
 }

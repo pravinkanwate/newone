@@ -22,11 +22,11 @@ pipeline {
            }
          }
 
-      #  stage('Deploy to Production') {
-       #     steps {
-        #        sh 'date'
-         #   }
-        #}
+        stage('Deploy to Production') {
+           steps {
+                sh 'date'
+            }
+        }
 
     }
 }

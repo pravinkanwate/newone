@@ -19,7 +19,7 @@ pipeline {
 
         stage('Build Docker Image') {
            steps {
-                sh 'docker build -t newonetwo .'
+                sh 'docker build -t newone .'
            }
          }
         stage('Upload Docker Image to AWS ECR') {
@@ -28,10 +28,10 @@ pipeline {
         			      withDockerRegistry([credentialsId:'ecr:ap-south-1:best-ecr', url:"https://041052185687.dkr.ecr.ap-south-1.amazonaws.com"]){
                           sh """
         				  echo "Tagging the Docker Image: In Progress"
-        				  docker tag newone:latest 041052185687.dkr.ecr.ap-south-1.amazonaws.com/newonetwo:latest
+        				  docker tag newone:latest 041052185687.dkr.ecr.ap-south-1.amazonaws.com/newone:latest
         				  echo "Tagging the Docker Image: Completed"
         				  echo "Push Docker Image to ECR : In Progress"
-        				  docker push 041052185687.dkr.ecr.ap-south-1.amazonaws.com/newonetwo:latest
+        				  docker push 041052185687.dkr.ecr.ap-south-1.amazonaws.com/newone:latest
         				  echo "Push Docker Image to ECR : Completed"
         				  """
         				  }

@@ -19,7 +19,7 @@ pipeline {
 
         stage('Build Docker Image') {
            steps {
-                sh 'docker build -t newone .'
+                sh 'docker build -t newonetwo .'
            }
          }
         stage('Upload Docker Image to AWS ECR') {
